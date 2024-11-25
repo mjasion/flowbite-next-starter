@@ -11,5 +11,45 @@
   "configMigration": true,
   "rebaseWhen": "conflicted",
   "prConcurrentLimit": 5,
-  "minimumReleaseAge": "3 days"
+  "minimumReleaseAge": "3 days",
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["eslint"],
+      "groupName": "eslint"
+    },
+    {
+      "matchPackagePatterns": ["prettier"],
+      "groupName": "prettier"
+    },
+    {
+      "matchPackagePatterns": ["tailwindcss"],
+      "groupName": "tailwindcss"
+    },
+    {
+      "matchPackagePatterns": ["flowbite"],
+      "groupName": "flowbite"
+    },
+    {
+      "matchPackagePatterns": ["next"],
+      "groupName": "next"
+    },
+    {
+      "groupName": "Font Awesome",
+      "matchPackageNames": [
+        "@fortawesome/**"
+      ]
+    },
+    {
+      "extends": [
+        "monorepo:eslint"
+      ],
+      "groupName": "eslint monorepo",
+      "matchUpdateTypes": [
+        "digest",
+        "patch",
+        "minor",
+        "major"
+      ]
+    }
+  ]
 }
