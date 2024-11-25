@@ -1,55 +1,40 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended",
-    "group:recommended"
-  ],
-  "schedule": [
-    "on Friday",
-    "on Tuesday"
-  ],
+  "extends": ["config:recommended", "group:recommended"],
+  "schedule": ["on Friday", "on Tuesday"],
   "configMigration": true,
   "rebaseWhen": "conflicted",
   "prConcurrentLimit": 5,
   "minimumReleaseAge": "3 days",
   "packageRules": [
     {
-      "matchPackagePatterns": ["eslint"],
-      "groupName": "eslint"
+      "groupName": "eslint",
+      "matchPackageNames": ["/eslint/"]
     },
     {
-      "matchPackagePatterns": ["prettier"],
-      "groupName": "prettier"
+      "groupName": "prettier",
+      "matchPackageNames": ["/prettier/"]
     },
     {
-      "matchPackagePatterns": ["tailwindcss"],
-      "groupName": "tailwindcss"
+      "groupName": "tailwindcss",
+      "matchPackageNames": ["/tailwindcss/"]
     },
     {
-      "matchPackagePatterns": ["flowbite"],
-      "groupName": "flowbite"
+      "groupName": "flowbite",
+      "matchPackageNames": ["/flowbite/"]
     },
     {
-      "matchPackagePatterns": ["next"],
-      "groupName": "next"
+      "groupName": "next",
+      "matchPackageNames": ["/next/"]
     },
     {
       "groupName": "Font Awesome",
-      "matchPackageNames": [
-        "@fortawesome/**"
-      ]
+      "matchPackageNames": ["@fortawesome/**"]
     },
     {
-      "extends": [
-        "monorepo:eslint"
-      ],
+      "extends": ["monorepo:eslint"],
       "groupName": "eslint monorepo",
-      "matchUpdateTypes": [
-        "digest",
-        "patch",
-        "minor",
-        "major"
-      ]
+      "matchUpdateTypes": ["digest", "patch", "minor", "major"]
     }
   ]
 }
