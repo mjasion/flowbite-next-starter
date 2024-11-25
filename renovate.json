@@ -1,13 +1,15 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended"
+    "config:recommended",
+    "group:recommended"
   ],
   "schedule": [
-    "on Friday"
+    "on Friday",
+    "on Tuesday"
   ],
   "configMigration": true,
   "rebaseWhen": "conflicted",
-  "prConcurrentLimit": 0,
+  "prConcurrentLimit": 5,
   "minimumReleaseAge": "3 days"
 }
